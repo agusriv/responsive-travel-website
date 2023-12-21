@@ -208,6 +208,10 @@ input {
   color: var(--white-color);
 }
 
+.logo-talmet{
+  width: 100px;
+}
+
 .nav__logo {
   font-weight: var(--font-semi-bold);
 }
@@ -358,23 +362,6 @@ input {
   font-size: var(--small-font-size);
   font-weight: var(--font-semi-bold);
   margin-bottom: var(--mb-0-75);
-}
-
-.home__info-button {
-  font-size: var(--smaller-font-size);
-}
-
-.home__info-overlay {
-  overflow: var(--img-hidden);
-}
-
-.home__info-img {
-  width: 145px;
-  transition: var(--img-transition);
-}
-
-.home__info-img:hover {
-  transform: var(--img-scale);
 }
 
 /*=============== BUTTONS ===============*/
@@ -721,23 +708,6 @@ input {
   color: var(--title-color);
 }
 
-/*=============== SPONSORS ===============*/
-.sponsor__container {
-  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-  justify-items: center;
-  row-gap: 3.5rem;
-}
-
-.sponsor__content:hover .sponsor__img {
-  filter: invert(0.5);
-}
-
-.sponsor__img {
-  width: 90px;
-  filter: invert(0.7);
-  transition: var(--img-transition);
-}
-
 /*=============== FOOTER ===============*/
 .footer__container {
   row-gap: 5rem;
@@ -880,13 +850,11 @@ input {
     grid-template-columns: .6fr;
     justify-content: center;
   }
+
   .place__container {
     grid-template-columns: repeat(3, max-content);
   }
-  .subscribe__form {
-    width: 470px;
-    margin: 0 auto;
-  }
+  
 }
 
 @media screen and (min-width: 768px) {
@@ -913,6 +881,9 @@ input {
   .nav__list {
     flex-direction: row;
     column-gap: 4rem;
+  }
+  .logo-talmet{
+    width: 150px;
   }
   .nav__toggle, .nav__close {
     display: none;
@@ -985,17 +956,6 @@ input {
   }
   .experience__overlay:nth-child(2) {
     width: 160px;
-  }
-  .subscribe__bg {
-    background: none;
-    padding: 0;
-  }
-  .subscribe__container {
-    background-color: var(--first-color-second);
-    padding: 3.5rem 0;
-  }
-  .subscribe__input {
-    padding: 0 .5rem;
   }
 
   .contact__page{
