@@ -11,11 +11,11 @@
   --hue-color: 190;
 
   /* HSL color mode */
-  --first-color: hsl(var(--hue-color), 64%, 22%);
-  --first-color-second: hsl(var(--hue-color), 64%, 22%);
-  --first-color-alt: hsl(var(--hue-color), 64%, 15%);
-  --title-color: hsl(var(--hue-color), 64%, 18%);
-  --text-color: hsl(var(--hue-color), 24%, 35%);
+  --first-color: #0B135A;
+  --first-color-second: #0B135A;
+  --first-color-alt: black;
+  --title-color: #0B135A;
+  --text-color: black;
   --text-color-light: hsl(var(--hue-color), 8%, 60%);
   --input-color: hsl(var(--hue-color), 24%, 97%);
   --body-color: hsl(var(--hue-color), 100%, 99%);
@@ -72,11 +72,11 @@
 
 /*========== Variables Dark theme ==========*/
 body.dark-theme {
-  --first-color-second: hsl(var(--hue-color), 54%, 12%);
+  --first-color-second: #0B135A;
   --title-color: hsl(var(--hue-color), 24%, 95%);
   --text-color: hsl(var(--hue-color), 8%, 75%);
   --input-color: hsl(var(--hue-color), 29%, 16%);
-  --body-color: hsl(var(--hue-color), 29%, 12%);
+  --body-color: #00122E;
   --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
 }
@@ -300,10 +300,11 @@ input {
   width: 100%;
   height: 100vh;
   object-fit: cover;
-  object-position: 83%;
+  object-position: 15%;
 }
 
 .home__container {
+  top: 1.5rem;
   position: relative;
   height: calc(100vh - var(--header-height));
   align-content: center;
@@ -379,7 +380,7 @@ input {
 /*=============== BUTTONS ===============*/
 .button {
   display: inline-block;
-  background-color: var(--first-color);
+  background-color: #4767A5;
   color: var(--white-color);
   padding: 1rem 2rem;
   font-weight: var(--font-semi-bold);
@@ -387,7 +388,7 @@ input {
 }
 
 .button:hover {
-  background-color: var(--first-color-alt);
+  background-color: #0B135A;
 }
 
 .button--flex {
@@ -644,37 +645,80 @@ input {
 }
 
 /*=============== SUBSCRIBE ===============*/
-.subscribe__bg {
-  background-color: var(--first-color-second);
-  padding: 2.5rem 0;
+.contact__container{
+  padding-bottom: 4rem;
 }
 
-.subscribe__title, 
-.subscribe__description {
-  color: var(--white-color);
+.contact__button{
+  justify-self: center;
 }
 
-.subscribe__description {
-  text-align: center;
-  margin-bottom: var(--mb-2-5);
+.contact__page{
+  padding-block: 1rem 4rem;
 }
 
-.subscribe__form {
-  background-color: var(--input-color);
-  padding: .5rem;
-  display: flex;
-  justify-content: space-between;
+.contact__form{
+  position: relative;
 }
 
-.subscribe__input {
-  width: 70%;
-  padding-right: .5rem;
-  background-color: var(--input-color);
-  color: var(--text-color);
+.contact__box{
+  position: relative;
+  width: 100%;
+  height: 58px;
 }
 
-.subscribe__input::placeholder {
-  color: var(--text-color);
+.contact__input{
+  width: 100%;
+  height: 100%;
+  background-color: var(--body-color);
+  border: 3px solid var(--text-color-light);
+  padding: .5rem 1.5rem;
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  transition: border-color .4s, background-color .4s;
+}
+
+.contact__input:focus{
+  border-color: var(--title-color);
+}
+
+.contact__input:-webkit-autofill{
+  transition: background-color 6000s, color 6000s;
+}
+
+.contact__label{
+  position: absolute;
+  top: -16px;
+  left: 16px;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+  background-color: var(--body-color);
+  padding: 8px;
+  transition: background-color .4s;
+}
+
+.contact__area{
+  height: 10rem;
+}
+
+.contact__area textarea{
+  resize: none;
+  padding-top: 1.25rem;
+}
+
+.contact__send{
+  padding-block: 1.25rem;
+  cursor: pointer;
+}
+
+.contact__message{
+  position: absolute;
+  bottom: -2rem;
+  left: 0;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
 }
 
 /*=============== SPONSORS ===============*/
@@ -953,6 +997,26 @@ input {
   .subscribe__input {
     padding: 0 .5rem;
   }
+
+  .contact__page{
+    grid-template-columns: 670px;
+    justify-content: center;
+  }
+  .contact__group{
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+  }
+  .contact__area{
+    height: 18rem;
+  }
+  .contact__message{
+    bottom: 5rem;
+  }
+  .contact__send{
+    justify-self: center;
+    margin-top: 1.5rem;
+  }
+
   .footer__rights {
     flex-direction: row;
     justify-content: space-between;
